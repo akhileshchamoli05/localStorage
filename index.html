@@ -47,6 +47,21 @@
                     localStorage.removeItem(obj.email);
                     parentElem.removeChild(childElem)
                 }
+                const edbtn=document.createElement('input');
+                edbtn.type="button";
+                edbtn.value='Edit';
+                edbtn.onclick=()=>
+                {
+                    localStorage.removeItem(obj.email);
+                    parentElem.removeChild(childElem);
+                    document.getElementById('u').value=obj.name;
+                    document.getElementById('e').value=obj.email;
+                    document.getElementById('p').value=obj.phonenumber;
+                                }
+                
+                childElem.appendChild(edbtn);
+
+                childElem.appendChild(delbtn);
                 parentElem.appendChild(childElem);  
         }
         }
