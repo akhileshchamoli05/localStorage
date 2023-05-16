@@ -32,6 +32,14 @@
             }
             localStorage.setItem('userdetails',JSON.stringify(obj));
             console.log(obj);
+            showUserOnScreen(obj);
+        }
+        function showUserOnScreen(obj){
+                const parentElem=document.getElementById('listOfitems')
+                const childElem=document.createElement('li');
+                childElem.textContent = obj.name + '-' + obj.email + '-' + obj.phonenumber;
+                parentElem.appendChild(childElem);  
+        }
         }
     </script>
 </body>
