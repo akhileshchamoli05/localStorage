@@ -16,6 +16,7 @@
         <input type="tel" name="phonenumber">
         <button>Submit </button>
     </form>
+    <ul id="listOfitems"></ul>
     <script>
         function saveToLocalStorage(event){
             event.preventDefault();
@@ -38,6 +39,14 @@
                 const parentElem=document.getElementById('listOfitems')
                 const childElem=document.createElement('li');
                 childElem.textContent = obj.name + '-' + obj.email + '-' + obj.phonenumber;
+            const delbtn= document.createElement('input');
+                delbtn.type="button";
+                delbtn.value='Delete';
+                delbtn.onclick=()=>
+                {
+                    localStorage.removeItem(obj.email);
+                    parentElem.removeChild(childElem)
+                }
                 parentElem.appendChild(childElem);  
         }
         }
